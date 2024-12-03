@@ -1,0 +1,17 @@
+@if (user) {
+<div class="profile-card">
+  <img
+    class="profile-card__img"
+    [src]="user.picture.large"
+    [alt]="user.name.first + ' ' + user.name.last + ' profile image'"
+  />
+  <p class="profile-card__name">{{ user.name.first }} {{ user.name.last }}</p>
+  <p class="profile-card__gender">{{ user.gender }}</p>
+  <p class="profile-card__location">
+    {{ user.location.country }}, {{ user.location.city }}
+  </p>
+  <a [href]="'mailto:' + user.email" class="profile-card__mail">{{
+    user.email
+  }}</a>
+</div>
+}

@@ -1,0 +1,25 @@
+<div class="weather-card">
+  <div class="weather-card__thumb">
+    <p class="weather-card__current">
+      {{ weather.current_weather.temperature
+      }}{{ weather.current_weather_units.temperature }}
+    </p>
+    <img
+      class="weather-card__img"
+      [src]="
+        'assets/images/' + getWeatherIcon(weather.current_weather.weathercode)
+      "
+      alt=""
+    />
+  </div>
+  <div class="weather-card__thumb">
+    <p class="weather-card__temp">
+      Min: {{ getMinTemperature() || "N/A"
+      }}{{ weather.daily_units.temperature_2m_max || "" }}
+    </p>
+    <p class="weather-card__temp">
+      Max: {{ getMaxTemperature() || "N/A"
+      }}{{ weather.daily_units.temperature_2m_min || "" }}
+    </p>
+  </div>
+</div>
